@@ -1,0 +1,18 @@
+# Server Configuration
+server:
+  port: ${PORT:8080}
+
+# Application Security Configuration
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8331/realms/javanotice
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: javanotice-keycloack-client
+            client-secret: 0bN8reoX4AtDA1UGiYKUdnI9tA67MLsi
+            scope: openid
